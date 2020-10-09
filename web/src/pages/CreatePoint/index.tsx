@@ -79,7 +79,7 @@ const CreatePoint = () => {
     // Posição que o usuário clicou no mapa
     const [ selectedPosition, setSelectedPosition ] = useState<[number, number]>([0, 0]); //tipo da position (que marcamos no mapa é um array de numeros)
 
-    // Inputs do ponto de coleta
+    // Inputs do ponto de doação
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -89,7 +89,7 @@ const CreatePoint = () => {
     // Arquivo enviado no upload no dropzone (Armazena informação do tipo File (objeto global do javascript) )
     const [selectedFile, setSelectedFile] = useState<File>();
 
-    const history = useHistory(); // redirecionar o usuário depois do ponto de coleta para a tela inicial
+    const history = useHistory(); // redirecionar o usuário depois do ponto de doação para a tela inicial
 
     //---------- COLOCAR O PIN INICIAL NA LOCALIZAÇÃO DO USUÁRIO ----------------
     useEffect(() => {
@@ -181,7 +181,7 @@ const CreatePoint = () => {
         }
     }
 
-    // Enviar para a API o novo ponto de coleta criado
+    // Enviar para a API o novo ponto de doação criado
     // colocamos no <form com onSubmit (função disparada assim que o usuario der um submit, pega tanto quando da enter quanto quando clica no botão)
     async function handleSubmit(event: FormEvent) { 
         // O funcionamento padrão do formulário no HTML envia o usuário em uma outra tela, para evitar isso:
@@ -220,7 +220,7 @@ const CreatePoint = () => {
     return (
         <div id="page-create-point">
             <header>
-                {/* <img src={logo} alt="Ecoleta"/> */}
+                {/* <img src={logo} alt="logo"/> */}
 
                 <Link to="/">
                     <FiArrowLeft />
@@ -320,9 +320,9 @@ const CreatePoint = () => {
                     </div>
                 </fieldset>
 
-                {/* ----- ÍTENS DE COLETA (carregar da API) ----- */}
+                {/* ----- ÍTENS DE DOAÇÃO (carregar da API) ----- */}
                 <fieldset>
-                    <img src={teste} alt="Ecoleta"/>
+                    <img src={teste} alt="item da doacao"/>
                     {/* <legend>
                         <h2>Ítens da doação</h2>
                         <span>Selecione um ou mais itens abaixo</span>
